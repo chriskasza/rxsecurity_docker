@@ -14,10 +14,8 @@ RUN ./configure --with-tdsver=$TDSVER --enable-msdblib
 RUN make
 RUN make install
 
-# Install Heroku Toolbelt
-RUN echo "deb http://toolbelt.heroku.com/ubuntu ./" > /etc/apt/sources.list.d/heroku.list
-RUN wget -O- https://toolbelt.heroku.com/apt/release.key | apt-key add -
-RUN apt-get update && apt-get install -y heroku-toolbelt
+# Install Heroku CLI
+RUN wget -qO- https://cli-assets.heroku.com/install-ubuntu.sh | sh
 
 # Install MySQL client
 RUN apt-get update && apt-get install -y mysql-client-5.7 mysql-client-core-5.7
