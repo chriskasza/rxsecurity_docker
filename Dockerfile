@@ -10,9 +10,9 @@ ENV TDSVER 7.3
 RUN apt-get update && apt-get install -y apt-transport-https
 
 # Add Heroku repository and key
-echo "deb https://cli-assets.heroku.com/branches/stable/apt ./" > \
+RUN echo "deb https://cli-assets.heroku.com/branches/stable/apt ./" > \
     /etc/apt/sources.list.d/heroku.list
-wget -qO- https://cli-assets.heroku.com/apt/release.key | apt-key add -
+RUN wget -qO- https://cli-assets.heroku.com/apt/release.key | apt-key add -
 
 # Install Heroku CLI, MySQL client, and FreeTDS dependencies
 RUN apt-get update && apt-get install -y \
