@@ -1,5 +1,5 @@
-#FROM ruby:2.3.3
-FROM heroku/heroku:16
+FROM ruby:2.3.3
+#FROM heroku/heroku:16
 
 MAINTAINER Colibri Software <support@colibri-software.com>
 
@@ -18,7 +18,8 @@ RUN make install
 RUN wget -qO- https://cli-assets.heroku.com/install-ubuntu.sh | sh
 
 # Install MySQL client
-RUN apt-get update && apt-get install -y mysql-client-5.7 mysql-client-core-5.7
+RUN apt-get update && apt-get install -y mysql-client-5.5
+#RUN apt-get update && apt-get install -y mysql-client-5.7 mysql-client-core-5.7
 
 WORKDIR /
 RUN rm -rf /tmp/$FREETDS_VERSION
