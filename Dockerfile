@@ -32,3 +32,6 @@ RUN make
 RUN make install
 WORKDIR /
 RUN rm -rf /tmp/$FREETDS_VERSION
+
+# Install tiny_tds gem, so review app doesn't have to
+RUN gem install tiny_tds
