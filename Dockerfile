@@ -19,6 +19,7 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     heroku \
     libc6-dev \
+    node \
     nodejs \
     npm \
     mysql-client-5.5
