@@ -15,7 +15,7 @@ RUN echo "deb https://cli-assets.heroku.com/branches/stable/apt ./" > \
 RUN wget -qO- https://cli-assets.heroku.com/apt/release.key | apt-key add -
 
 # Install Heroku CLI, MySQL client, and FreeTDS dependencies
-RUN apt-get update
+RUN apt-get update \
     && apt-get install -y \
         build-essential \
         heroku \
