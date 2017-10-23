@@ -19,9 +19,14 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     heroku \
     libc6-dev \
+    nodejs \
+    npm \
     mysql-client-5.5
     #mysql-client-5.7 \
     #mysql-client-core-5.7
+
+# Install NPM
+RUN npm install npm --global
 
 # Install FreeTDS
 RUN curl -s ftp://ftp.freetds.org/pub/freetds/stable/$FREETDS_VERSION.tar.gz \
