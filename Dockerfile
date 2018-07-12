@@ -1,4 +1,4 @@
-FROM ruby:2.3.3
+FROM ruby:2.5.1
 #FROM heroku/heroku:16
 
 MAINTAINER Colibri Software <support@colibri-software.com>
