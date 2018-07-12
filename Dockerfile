@@ -20,7 +20,7 @@ RUN apt-get update \
         build-essential \
         heroku \
         libc6-dev \
-        mysql-client-5.5 \
+        mysql-client \
         #mysql-client-5.7 \
         #mysql-client-core-5.7
     && rm -rf /var/lib/apt/lists/*
