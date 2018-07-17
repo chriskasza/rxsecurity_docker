@@ -18,11 +18,10 @@ RUN wget -qO- https://cli-assets.heroku.com/apt/release.key | apt-key add -
 RUN apt-get update \
     && apt-get install -y \
         build-essential \
+        cmake \
         heroku \
         libc6-dev \
-        mysql-client \
-        #mysql-client-5.7 \
-        #mysql-client-core-5.7
+        mysql-client \        
     && rm -rf /var/lib/apt/lists/*
 
 # Install FreeTDS
