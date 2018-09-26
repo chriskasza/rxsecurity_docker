@@ -3,7 +3,7 @@ FROM ruby:2.5.1
 
 MAINTAINER Colibri Software <support@colibri-software.com>
 
-ENV FREETDS_VERSION freetds-1.00.49
+ENV FREETDS_VERSION freetds-1.00.98
 ENV TDSVER 7.3
 
 # Allow secure transport
@@ -57,7 +57,7 @@ RUN set -ex \
   done
 
 ENV NPM_CONFIG_LOGLEVEL info
-ENV NODE_VERSION 8.7.0
+ENV NODE_VERSION 8.12.0
 
 RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" \
   && case "${dpkgArch##*-}" in \
@@ -76,7 +76,7 @@ RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" \
   && rm "node-v$NODE_VERSION-linux-$ARCH.tar.xz" SHASUMS256.txt.asc SHASUMS256.txt \
   && ln -s /usr/local/bin/node /usr/local/bin/nodejs
 
-ENV YARN_VERSION 1.2.0
+ENV YARN_VERSION 1.10.1
 
 RUN set -ex \
   && for key in \
