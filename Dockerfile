@@ -14,14 +14,14 @@ RUN echo "deb https://cli-assets.heroku.com/branches/stable/apt ./" > \
     /etc/apt/sources.list.d/heroku.list
 RUN wget -qO- https://cli-assets.heroku.com/apt/release.key | apt-key add -
 
-# Install Heroku CLI, MySQL client, and FreeTDS dependencies
+# Install Heroku CLI, PostgreSQL client, and FreeTDS dependencies
 RUN apt-get update \
     && apt-get install -y \
         build-essential \
         cmake \
         heroku \
         libc6-dev \
-        mysql-client \        
+        postgresql-client \        
     && rm -rf /var/lib/apt/lists/*
 
 # Install FreeTDS
